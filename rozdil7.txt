@@ -1,0 +1,66 @@
+РОЗДІЛ 7. Модель даних інформаційної системи
+
+7.1. Основні сутності системи
+
+У системі передбачені такі основні сутності:
+
+1. Student (Студент)
+2. Teacher (Викладач)
+3. Group (Група)
+4. Subject (Дисципліна)
+5. Classroom (Аудиторія)
+6. Schedule (Розклад)
+7. Lesson (Заняття)
+
+7.2. Атрибути сутностей
+
+Student:
+student_id (PK)
+first_name
+last_name
+group_id (FK)
+
+Teacher:
+teacher_id (PK)
+first_name
+last_name
+email
+
+Group:
+group_id (PK)
+group_name
+course
+
+Subject:
+subject_id (PK)
+subject_name
+teacher_id (FK)
+
+Classroom:
+classroom_id (PK)
+room_number
+capacity
+
+Lesson:
+lesson_id (PK)
+subject_id (FK)
+teacher_id (FK)
+group_id (FK)
+classroom_id (FK)
+date
+time_start
+time_end
+
+7.3. Зв’язки між сутностями
+
+Один викладач може викладати багато дисциплін (1:N).
+Одна група має багато студентів (1:N).
+Одне заняття пов’язане з однією групою,
+одним викладачем та однією аудиторією.
+Дисципліна може входити до багатьох занять.
+
+7.4. Логічна структура бази даних
+
+Модель даних реалізується у вигляді реляційної бази даних
+з використанням первинних (PK) та зовнішніх ключів (FK),
+що забезпечують цілісність даних.
